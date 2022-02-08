@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 2</title>
+</head>
+<body>
+    <input type="text" placeholder="digite a frase"class="frase">
+    <button onclick="calcular()">calcular</button>
+    <p class="result"></p>
+</body>
+<script>
+
+    
+    function calcular(){
+        const frase= document.querySelector(".frase").value
+        let arraypalavra= frase.split(" ")
+        arraypalavra=arraypalavra.length
+        let arrayfrase=frase.split(".")
+        for(i in arrayfrase){
+            if(arrayfrase[i]==""){
+                arrayfrase.splice(i,i)
+            }
+        }
+        arrayfrase= arrayfrase.length
+        let letras=frase
+        for(i in frase){
+            letras = letras.replace(" ","")
+            letras = letras.replace(",","")
+            letras = letras.replace(".","")
+        }
+        letras= letras.length
+        const resultado= document.querySelector(".result")
+        resultado.innerHTML=resultado.innerHTML +`Esse paragrafo tem ${letras} letras, ${arraypalavra} palavras, e ${arrayfrase} frases.`
+
+    }
+</script>
+</html>
